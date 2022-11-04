@@ -67,14 +67,14 @@ packer.startup({
       -- lualine 底部信息栏
       use({
          "nvim-lualine/lualine.nvim",
-         requires = { "kyazdani42/nvim-web-devicons" }
+         requires = "kyazdani42/nvim-web-devicons"
       })
       use("arkav/lualine-lsp-progress")
 
       -- telescope 模糊查找
       use {
          'nvim-telescope/telescope.nvim',
-         requires = { "nvim-lua/plenary.nvim" },
+         requires = "nvim-lua/plenary.nvim",
       }
       use "LinArcX/telescope-env.nvim"
 
@@ -118,6 +118,7 @@ packer.startup({
       -- UI增强
       use("onsails/lspkind-nvim")
       use("tami5/lspsaga.nvim")
+      use("j-hui/fidget.nvim")
 
       -- Lua 增强
       -- use("folke/lua-dev.nvim")
@@ -135,13 +136,14 @@ packer.startup({
 
       -- toggleterm 终端加强
       use("akinsho/toggleterm.nvim")
-      -- surround
+      -- surround 符号成对修改
       use("ur4ltz/surround.nvim")
-      -- Comment
+      -- Comment 注释
       use("numToStr/Comment.nvim")
-      -- nvim-autopairs
+      -- nvim-autopairs 自动符号成对
       use("windwp/nvim-autopairs")
-
+      -- git
+      use("lewis6991/gitsigns.nvim")
       -------------------------------------------------------
 
    end,
