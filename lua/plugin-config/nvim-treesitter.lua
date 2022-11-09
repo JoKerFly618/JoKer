@@ -27,6 +27,8 @@ treesitter.setup({
    indent = {
       enable = true,
    },
+
+   on_attach = require("keybindings").treesitter(),
 })
 
 -- 开启 Folding 模块

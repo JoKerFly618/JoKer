@@ -47,7 +47,7 @@ local default_opts = {
       ---Add comment on the line below
       below = "gco",
       ---Add comment at the end of line
-      eol = "gcA",
+      eol = "gca",
    },
 
    ---Create basic (operator-pending) and extended mappings for NORMAL + VISUAL mode
@@ -60,7 +60,7 @@ local default_opts = {
       basic = true,
       ---Extra mapping
       ---Includes `gco`, `gcO`, `gcA`
-      extra = false,
+      extra = true,
       ---Extended mapping
       ---Includes `g>`, `g<`, `g>[count]{motion}` and `g<[count]{motion}`
       extended = false,
@@ -75,5 +75,4 @@ local default_opts = {
    post_hook = nil,
 }
 
--- 关闭了extra快捷键，只用keybindings里定义的基础快捷键
 comment.setup(vim.tbl_deep_extend("force", default_opts, require("keybindings").comment))

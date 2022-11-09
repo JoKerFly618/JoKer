@@ -108,3 +108,6 @@ vim.o.showtabline = 2
 
 -- 使用增强状态栏插件后不再需要 vim 的模式提示
 vim.o.showmode = false
+
+-- 系统剪贴板和默认剪贴板等价
+vim.o.clipboard = 'unnamed'

@@ -1,3 +1,4 @@
+---@diagnostic disable: unused-local
 -- 自动安装 Packer.nvim
 -- 插件安装目录
 -- ~/.local/share/nvim/site/pack/packer/start/packer.nvim
@@ -89,6 +90,7 @@ packer.startup({
          "nvim-treesitter/nvim-treesitter",
          run = ":TSUpdate",
       })
+      -- 这里的一些额外插件可以看一看
 
       -- indent-blankline  代码段竖线
       use("lukas-reineke/indent-blankline.nvim")
@@ -144,8 +146,14 @@ packer.startup({
       use("windwp/nvim-autopairs")
       -- git
       use("lewis6991/gitsigns.nvim")
-      -------------------------------------------------------
+      -- 快速光标移动
+      use("phaazon/hop.nvim")
+      -- tab加强
+      use("abecodes/tabout.nvim")
+      -- 文件比对（git）
+      use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
 
+      -------------------------------------------------------
    end,
 
    config = {

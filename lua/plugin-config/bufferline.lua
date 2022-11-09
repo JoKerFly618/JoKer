@@ -35,4 +35,6 @@ bufferline.setup({
          return s
       end,
    },
+
+   on_attach = require("keybindings").bufferline(),
 })
