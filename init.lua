@@ -26,6 +26,7 @@ require("plugin-config.nvim-autopairs")
 require("plugin-config.gitsigns")
 require("plugin-config.hop")
 require("plugin-config.tabout")
+require("plugin-config.lsp_signature")
 
 -- 内置LSP
 require("lsp.setup")

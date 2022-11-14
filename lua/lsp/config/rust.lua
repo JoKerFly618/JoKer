@@ -16,6 +16,8 @@ local lspconfig_opts = {
       require("keybindings").mapLSP(buf_set_keymap)
       -- 保存时自动格式化
       vim.cmd('autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()')
+      -- 函数参数加强
+      require "lsp_signature".on_attach({}, bufnr)
    end,
 
    settings = {

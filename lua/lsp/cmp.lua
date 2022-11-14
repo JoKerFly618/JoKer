@@ -18,29 +18,34 @@ cmp.setup({
       end,
    },
 
+   window = {
+      completion = cmp.config.window.bordered(),
+      documentation = cmp.config.window.bordered(),
+   },
+
    -- 补全源
    sources = cmp.config.sources({
       { name = "nvim_lsp" },
+      -- { name = "nvim_lsp_signature_help" },
 
       -- For vsnip users.
       { name = "vsnip" },
-
       -- For luasnip users.
       -- { name = 'luasnip' },
-
       --For ultisnips users.
       -- { name = 'ultisnips' },
-
       -- -- For snippy users.
       -- { name = 'snippy' },
-
-   }, { { name = "buffer" }, { name = "path" } }),
+   }, {
+      { name = "path" },
+      { name = "buffer" },
+   }),
 
    -- 快捷键设置
    mapping = require("keybindings").cmp(cmp),
 
    -- 使用lspkind-nvim显示类型图标
-   formatting = require('lsp.ui').formatting
+   formatting = require('lsp.ui').formatting,
 })
 
 -- / 查找模式使用 buffer 源
@@ -60,3 +65,8 @@ cmp.setup.cmdline(":", {
       { name = "cmdline" },
    }),
 })
+
+-- local capabilites = require('cmp_nvim_lsp').default_capabilities();
+-- require('lspconfig')['sumneko_lua'].setup {
+--    capabilites = capabilites
+-- }

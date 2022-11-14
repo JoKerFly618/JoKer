@@ -107,15 +107,21 @@ packer.startup({
       use("hrsh7th/nvim-cmp")
       -- Snippet 引擎
       use("hrsh7th/vim-vsnip")
+      use("hrsh7th/vim-vsnip-integ")
       -- 补全源
       use("hrsh7th/cmp-vsnip")
       use("hrsh7th/cmp-nvim-lsp") -- { name = nvim_lsp }
       use("hrsh7th/cmp-buffer") -- { name = 'buffer' },
       use("hrsh7th/cmp-path") -- { name = 'path' }
       use("hrsh7th/cmp-cmdline") -- { name = 'cmdline' }
-      use("hrsh7th/cmp-nvim-lsp-signature-help") -- { name = 'nvim_lsp_signature_help' }
+
       -- 常见编程语言代码段
       use("rafamadriz/friendly-snippets")
+
+      -- 函数参数提示
+      -- use("hrsh7th/cmp-nvim-lsp-signature-help") -- { name = 'nvim_lsp_signature_help' }
+      use("ray-x/lsp_signature.nvim")
+
 
       -- UI增强
       use("onsails/lspkind-nvim")

@@ -3,6 +3,13 @@ local runtime_path = vim.split(package.path, ';')
 table.insert(runtime_path, 'lua/?.lua')
 table.insert(runtime_path, 'lua/?/init.lua')
 
+-- local capabilities = require("cmp_nvim_lsp").default_capabilities()
+-- local capabilities = vim.lsp.protocol.make_client_capabilities()
+-- capabilities.textDocument.completion.completionItem.snippetSupport = true
+-- capabilities.textDocument.completion.completionItem.resolveSupport = {
+--    properties = { "documentation", "detail", "additionalTextEdits" },
+-- }
+
 local opts = {
    settings = {
       Lua = {
@@ -28,6 +35,8 @@ local opts = {
       },
    },
 
+   -- capabilities = capabilities,
+
    flags = {
       debounce_text_changes = 150,
    },
@@ -45,6 +54,9 @@ local opts = {
       require('keybindings').mapLSP(buf_set_keymap)
       -- 保存时自动格式化
       vim.cmd('autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()')
+
+      -- 函数参数加强
+      require("lsp_signature").on_attach({}, bufnr)
    end,
 }
 
