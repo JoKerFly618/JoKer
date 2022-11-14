@@ -81,6 +81,21 @@ map("i", "jj", "<Esc>", opt)
 map("i", "<leader>w", "<Esc>:w<cr>", opt)
 map("n", "<leader>w", ":w<cr>", opt)
 
+-- 文件比对
+-- 命令行下 diffvim [file1] [file2]
+-- vim下 vert diffsplit [otherFile]
+-- vim双屏下，快捷键如下
+map("n", "<leader>df", ":diffthis<cr>", opt)
+-- dp 将差异点的当前文档内容应用到另一文档（diff put）
+-- do 将差异点的另一文档的内容拷贝到当前文档（diff get）
+-- zo (folding open)
+-- zc (folding close)
+
+-- 二进制展示与还原
+-- 显示的文件修改仅影响下次打开时的格式
+map("n", "<leader>sb", ":%!xxd<cr>", opt)
+map("n", "<leader>sbb", ":%!xxd -r<cr>", opt)
+
 -- 退出
 map("n", "<leader>q", ":q<CR>", opt)
 map("n", "<leader>qq", ":q!<CR>", opt)
@@ -179,9 +194,9 @@ pluginKeys.mapLSP = function(mapbuf)
    mapbuf("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", opt)
 
    -- go xx
-   --  mapbuf('n', 'gd', '<cmd>Lspsaga preview_definition<CR>', opt)
-   -- mapbuf("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opt)
-   mapbuf("n", "gd", "<cmd>lua require'telescope.builtin'.lsp_definitions({ initial_mode = 'normal', })<CR>", opt)
+   -- mapbuf('n', 'gd', '<cmd>Lspsaga preview_definition<CR>', opt)
+   mapbuf("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opt)
+   -- mapbuf("n", "gd", "<cmd>lua require'telescope.builtin'.lsp_definitions({ initial_mode = 'normal', })<CR>", opt)
 
    -- readme
    -- mapbuf("n", "gh", "<cmd>lua vim.lsp.buf.hover()<CR>", opt)
