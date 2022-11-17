@@ -1,8 +1,10 @@
 local opts = {
-   cmd = {
-      "dotnet",
-      -- "/home/joker/.local/share/nvim/mason/packages/omnisharp/OmniSharp.dll"
-      "/media/joker/works/somework/omnisharp/OmniSharp.dll"
+   --[[ cmd = {
+      -- "dotnet",
+      "/home/joker/.dotnet/dotnet",
+
+      "/home/joker/.local/share/nvim/mason/packages/omnisharp/OmniSharp.dll"
+      -- "/media/joker/works/somework/omnisharp/OmniSharp.dll"
    },
 
    -- filetypes = { "cs", "vb" },
@@ -40,7 +42,7 @@ local opts = {
 
    -- Only run analyzers against open files when 'enableRoslynAnalyzers' is
    -- true
-   analyze_open_documents_only = false,
+   analyze_open_documents_only = false, ]]
 
    on_attach = function(client, bufnr)
       -- 禁用格式化功能，交给专门插件插件处理

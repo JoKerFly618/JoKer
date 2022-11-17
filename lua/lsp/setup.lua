@@ -15,7 +15,8 @@ require("mason-lspconfig").setup({
    -- 确保安装，根据需要填写
    ensure_installed = {
       "sumneko_lua", -- lua
-      "omnisharp", -- c#
+      -- "omnisharp", -- c#
+      "csharp_ls", -- c#
       "clangd", -- c/c++
       "cmake", -- cmake
       "rust_analyzer", -- rust
@@ -33,7 +34,8 @@ local lspconfig = require("lspconfig")
 -- https://github.com/williamboman/nvim-lsp-installer#available-lsps
 local servers = {
    sumneko_lua = require("lsp.config.lua"),
-   omnisharp = require("lsp.config.csharp"),
+   -- omnisharp = require("lsp.config.csharp"),
+   csharp_ls = require("lsp.config.csharp"),
    clangd = require("lsp.config.cpp"),
    cmake = require("lsp.config.cmake"),
    rust_analyzer = require("lsp.config.rust"),
